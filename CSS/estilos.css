@@ -1,0 +1,616 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px red solid; */
+}
+
+.cabecera__{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    transition: 1s;
+    
+}
+
+.menu__{
+    width: 100%;
+    height: auto;
+    display: flex;
+    transition: 1s;
+    animation-name: entrada_menu;
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+    
+}
+@keyframes entrada_menu{
+    0%{
+        transform: translateY(-50px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+} 
+.menu__ a{
+    padding: 25px;
+    line-height: 20px;
+    font-size:15px;
+    width: 250px;
+    font-variant: small-caps;
+    font: bold;
+    /* background-color: aqua; */
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    position: relative;
+    transition: 1s;
+}
+
+.menu__ a::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    clip-path: polygon(0 0, 0 0, 0 99%, 0% 100%);
+    transition-property: clip-path;
+    transition-duration: 1s;
+    top: 0;
+    left: 0;
+    background-color: #7a8668;
+    z-index: -1;
+}
+.menu__ a:hover::before{
+    clip-path: polygon(100% 0, 0 0, 0 99%, 100% 100%);
+}
+.abajo{
+    width: 100%;
+    background-color: #a2b38be0;
+    height: auto;
+}
+.abajo .menu__ a{
+    padding: 20px;
+    line-height: 10px;
+    font-size: 16px;
+    color: #fefff5;
+    background-blend-mode: soft-light;
+    
+    
+}
+.abajo .menu__ a:hover{
+    color: black;
+}
+.menu__ a:hover{
+    color: white;
+}
+
+
+
+.hero__arte{
+    width: 100%;
+    height: 500px;
+    background-color: beige;
+    display: flex;
+    overflow: hidden;
+    background-image: url(/IMG/Arte-contemporáneo-y-moderno-ivam.jpg);
+    background-size: 2500px;
+    background-position-y: -250px;
+    background-position-x: -150px;
+    background-clip: border-box;
+    background-attachment: fixed;
+
+}
+
+.definicion__{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    /* animation-duration: movimientoAparecer; */
+    
+}
+.definicion__titulo{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 50px;
+
+}
+.animacion__scroll{
+    opacity: 0;
+    transition:  all .5s ;
+
+}
+.relleno{
+    width: 100%;
+    height: 600px;
+
+}
+
+.descripcion__{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Esta clase me ayuda a hacer una animacion para los textos que aparecen al hacer scroll */
+.aparecer__{
+    animation: movimientoAparecer 1s  backwards;
+}
+
+@keyframes movimientoAparecer {
+    0%{
+        transform: translateY(-60px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.hero__cubismo{
+    width: 100%;
+    height: 500px;
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+
+.titulo_cubismo{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: beige;
+    color: azure;
+    background-image: url(/IMG/pablo_picasso_y_el_cubismo_2040_600_square.jpg);
+    background-size: 100%;
+
+}
+.images__cubismo{
+    display: grid;
+    align-self: center;
+    width: 50%;
+    padding: 0 5px;
+    opacity: 0%;
+    height: 82%;
+    grid-template-columns: repeat(auto-fit , minmax(min(100%,200px) , 1fr));
+    grid-auto-rows: 200px;
+    background-color: white;
+    grid-auto-flow: dense;
+    gap: 5px;
+    /* row-gap: 10px; */
+}
+.pictures__general{
+    /* max-width: 200px;    */
+     /* max-height: 120px;  */
+    /* height: 120px; */
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    overflow: hidden;
+    /* align-items: center; */
+    margin: 0;
+    padding: 0;
+    /* position: relative; */
+    
+}
+.pictures__{
+    /* max-width: 200px; */
+    width: 100%;
+    /* max-height: 200px; */
+    height: 100%;
+    /* position: relative; */
+    transition-property: transform opacity;
+    transition-duration: 500ms;
+    /* z-index: -1; */
+    /* position: absolute; */
+}
+
+
+
+/* .picture__1:hover{
+    opacity: 100%;
+} */
+
+.aparecer__img{
+    animation: aparecer_img_anim 1s ;
+    transition: all 1s ;
+}
+@keyframes aparecer_img_anim{
+    0%{
+        transform: translateY(50px);
+        
+        
+    }
+    100%{
+        transform:  translateY(0);
+        
+    }
+}
+.aparecer__img:hover{
+    opacity: 100%;
+}
+.pictures__:hover{
+    opacity: 56%;
+    transform: scale(1.2);
+}
+.hero__dadaismo{
+    width: 100%;
+    height: 500px;
+    /* background-color: antiquewhite; */
+    display: flex;
+    flex-direction: row;
+
+}
+.titulo_dadaismo{
+    background-image: url(/IMG/cinco.jpg);
+}
+/* .text_dadaismo{
+    color:#bbb8b8;
+}
+.descripcion_dadaismo{
+    color: whitesmoke;
+} */
+.hero_favuismo{
+    width: 100%;
+    height: 500px;
+    /* background-color: antiquewhite; */
+   
+    display: flex;
+    flex-direction: row;
+
+}
+.images_favuismo{
+    display: grid;
+    align-self: center;
+    margin-top: 70px;
+    width: 100%;
+    padding: 0 5px;
+    opacity: 100%;
+    height: 100%;
+    /* position:absolute; */
+    flex-basis: 100%;
+    /* display: none; */
+    grid-template-columns: repeat(auto-fit , minmax(min(100%,310px) , 1fr));
+    grid-auto-rows: 200px;
+    background-color: white;
+    grid-auto-flow: dense;
+    gap: 10px;
+    /* row-gap: 10px; */
+}
+.titulo_favuismo{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: beige; */
+    
+    color: azure;
+    background-image: url(/IMG/pablo_picasso_y_el_cubismo_2040_600_square.jpg);
+
+}
+.text_favuismo{
+    /* margin-bottom: 300px; */
+    
+    transition-property: font-family;
+    transition-duration: 1s;
+}
+.paragraph_cubismo{
+    color:#e8f8e4 ;
+}
+@keyframes cambiar_font {
+    0%{
+        font-family: 'Courier New', Courier, monospace;
+    }
+    25%{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+}
+
+/* .text_favuismo:hover{
+    font-family: 'Oleo Script Swash Caps', cursive;
+    animation-name: cambiar_font;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+} */
+.text_favuismo:hover{
+    cursor: pointer;
+}
+
+.icon__bajar img{
+    max-width: 25px;
+    position: relative;
+}
+
+
+
+.contenedor__images{
+    display: none;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.permitir__contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    transition: all 500ms;
+    animation-name: entrada_contenedor;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+}
+@keyframes entrada_contenedor {
+    0%{
+        height: 0%;
+    }
+    100%{
+        height: 100%;
+    }
+}
+.desparecer_contenedor{
+    display:none ;
+}
+.animacion_entrada{
+    display: inline-block;  
+    
+}
+
+/* .animacion_entrada:hover{
+    animation-name: cambiar-estilos ;
+    animation-duration: 3s;
+    animation-fill-mode: backwards;
+    animation-delay: 2s;
+}
+@keyframes cambiar-estilos {
+    0%{
+        font-family: 'Courier New', Courier, monospace;
+    }
+    25%{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+} */
+.part__1{
+    animation-name: moverPart1;
+    animation-duration: 100ms;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+}
+.part__2{
+    animation-name: moverPart2;
+    animation-duration: 100ms;
+    animation-delay: 1.2s;
+    animation-fill-mode: both;
+}
+.part__3{
+    animation-name: moverPart3;
+    animation-duration: 100ms;
+    animation-delay: 1.4s;
+    animation-fill-mode: both;
+}
+.part__4{
+    animation-name: moverPart4;
+    animation-duration: 100ms;
+    animation-delay: 1.6s;
+    animation-fill-mode: both;
+}
+
+@keyframes moverPart1{
+    0%{
+            transform: translateX(-60px);
+            opacity: 0%;
+    }
+    100%{
+            transform: translateX(0px);
+            opacity: 100%;
+    }
+}
+@keyframes moverPart2{
+    0%{
+            transform: translateX(-60px);
+            opacity: 0%;
+    }
+    100%{
+            transform: translateX(0px);
+            opacity: 100%;
+    }
+}
+@keyframes moverPart3{
+    0%{
+            transform: translateX(-60px);
+            opacity: 0%;
+    }
+    100%{
+            transform: translateX(0px);
+            opacity: 100%;
+    }
+}
+@keyframes moverPart4{
+    0%{
+            transform: translateX(-60px);
+            opacity: 0%;
+    }
+    100%{
+            transform: translateX(0px);
+            opacity: 100%;
+    }
+}
+.formulario__contacto{
+    width: 100%;
+    /* outline: 1px red solid; */
+    height: 500px;
+    display: flex;
+    background-image: url(/IMG/6658ae8795d25d9cc0f6da094ec635aa.jpg);
+    background-size: 100% ;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    
+
+}
+
+.formulario__general{
+    vertical-align: auto;
+    /* outline: 1px red solid; */
+    background-color: #622010b0;
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    opacity: 0;
+    border-radius: 0 30px 0 30px;
+    flex-direction:column ;
+}
+.form__{
+    width: 100%;
+    height: 100%;
+}
+.titulo__contacto{
+    /* outline: 1px red solid; */
+    letter-spacing: 2px;
+    font-size:21px ;
+    flex-basis: 100%;
+    color: #bbb8b8;
+    text-align: center;
+}
+.datos_persona{
+    /* outline: 1px red solid; */
+    opacity: 100%;
+    width: 100%;
+    margin: 20px 0;
+}
+.datos_persona label{
+    text-align: center;
+    display: block;
+    color: #bbb8b8;
+    font-size:20px;
+
+}
+.datos_persona input{
+    width: 80%;
+    color: rgba(255, 255, 255, 0.562);
+    background: transparent;
+    border: none;
+    border-bottom: 1px grey solid;
+    display: block;
+    margin: 0 auto;
+}
+
+.datos_persona input[type="submit"]{
+    display: block;
+    height: 50px;
+    margin-top: 30px;
+    letter-spacing: 5px;
+    border-bottom: none;
+    border-radius: none;
+    color: #bbb8b8;
+    background-color: #a16150;
+    transition-property: border-radius width font-variant;
+    transition-duration: 500ms;
+}
+.datos_persona input::selection{
+    background-color: black;
+    color: wheat;
+}
+/* Lugar donde se tienen que cambiar la opacidad o transparencia de las letras, para agregar estilos para la pagina */
+.datos_persona input[type="text"]:hover {
+    color: rgb(255, 255, 255);
+}
+.datos_persona input[type="email"]:hover {
+    color: rgb(255, 255, 255);
+}
+.datos_persona input[type="tel"]:hover {
+    color: rgb(255, 255, 255);
+}
+.enviar input{
+    color:black;
+}
+#error{
+    display: flex;
+    flex-direction: column;
+    color: #bbb8b8;
+}
+
+.datos_entrada{
+    
+    animation-name: datos_formulario;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes datos_formulario {
+    0%{
+        transform: translateX(-60px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+
+}
+
+.datos_persona input[type="submit"]:hover{
+    width: 60%;
+    border-radius: 0 30px 0 30px;
+    cursor: pointer;
+    letter-spacing: 0px;
+    font-variant: small-caps;
+}
+
+.imagen_favuismo{
+    background-image: url(/IMG/0-VAN-DONGEN-Portrait-de-femme.jpg);
+    background-size: 110%;
+}
+
+@media screen and (max-width:500px){
+    .cabecera__{
+        /* display: none; */
+
+    }
+    .images__cubismo{
+       display: flex;
+       flex-direction: column;
+        
+        
+    }
+    .images_favuismo{
+        margin-top: 5px;
+    }
+    
+    .pictures__general{
+        transition: all 1s;
+    }
+    .pictures__general:hover{
+        opacity: 100%;
+        /* width: 230px; */
+        height: 300px;
+        position: relative;
+        z-index: 1;
+    }
+    .pictures__favuismo{
+        height: 200px;
+        overflow: hidden;
+    }
+    .pictures__favuismo:hover{
+        width: 100%;
+        height: 400px;
+        position: relative;
+    }
+}
